@@ -3,22 +3,17 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Delivery from "./components/Delivery";
-import Reviews from "./components/Reviews";
-import Services from "./components/Services";
-import About from "./components/About";
-import Menu from "./components/Menu";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Profile from "./components/Profile";
-import Admin from "./components/Admin";
+import About from "./pages/About";
+import Menu from "./pages/Menu";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
+import Admin from "./pages/Admin/Admin";
 import BookingAccess from "./components/BookingAccess";
 import EditProfile from "./components/EditProfile";
 import EditMenu from "./components/EditMenu";
-import Users from "./components/Users";
-import Bookings from "./components/Bookings";
 import CreateItem from "./components/CreateItem";
+import Home from "./pages/Home/Home";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -59,26 +54,8 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Services />
-              <Delivery />
-              <Reviews />
-            </>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <>
-              <About />
-              <Reviews />
-            </>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route
           path="/login"
@@ -122,10 +99,7 @@ function App() {
           path="/admin"
           element={
             token ? (
-              <>
-                {" "}
-                <Users /> <Bookings /> <Admin onLogout={handleLogout} />{" "}
-              </>
+              <Admin onLogout={handleLogout} />
             ) : (
               <Navigate to="/login" replace />
             )

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Book from "./Book";
+import Book from "../pages/Book";
 
 function BookingAccess({ isSuperUser }) {
   const navigate = useNavigate();

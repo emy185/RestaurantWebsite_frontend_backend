@@ -11,7 +11,4 @@ urlpatterns = [
     path('my_bookings/', views.list_bookings, name='list_bookings'),
     path('admin_bookings/', views.admin_list_bookings, name='admin_list_bookings'),
     path('bookings/<int:pk>/status/', views.update_booking_status, name='update_booking_status'),
-    path('register/', views.register_user, name='register_user'),
-    path('profile/', views.profile_view, name='profile_view'),
-    path('admin/users/', views.admin_users, name='admin_users'),
 ]

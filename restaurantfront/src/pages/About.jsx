@@ -10,6 +10,7 @@ import about2 from "../imgs/about2.png";
 import about3 from "../imgs/about3.png";
 import about4 from "../imgs/about4.png";
 import CountUp from "react-countup";
+import Reviews from "../components/Reviews";
 
 const About = () => {
   return (
@@ -159,6 +160,7 @@ const About = () => {
         </div>
         <img src={about4} alt="about4" />
       </div>
+      <Reviews/>
     </div>
   );
 };

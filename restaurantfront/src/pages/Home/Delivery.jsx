@@ -1,5 +1,5 @@
 import React from "react";
-import delivery from "../imgs/delivery.png";
+import delivery from "../../imgs/delivery.png";
 import { FaRegClock } from "react-icons/fa6";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { HiOutlineReceiptPercent } from "react-icons/hi2";

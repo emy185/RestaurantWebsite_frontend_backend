@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from system.views import custom_token_view
+from users.views import custom_token_view
 from rest_framework_simplejwt.views import (
     TokenRefreshView, 
     TokenVerifyView
@@ -29,7 +29,8 @@ urlpatterns = [
     path('api/token/', custom_token_view, name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path("api/", include("system.urls"))
+    path("api/", include("system.urls")),
+    path("api/", include("users.urls"))
 ]
 
 urlpatterns+= static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)

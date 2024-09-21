@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Users from "./Users";
+import Bookings from "./Bookings";
 
 const Admin = ({ onLogout }) => {
   const [error, setError] = useState(null);
@@ -29,6 +31,8 @@ const Admin = ({ onLogout }) => {
   };
   return (
     <div className="font-poppins bg-stone-50 pt-20">
+    <Users/>
+    <Bookings/>
       <div>
         <h1 className="text-6xl font-playfair pb-10">Menu</h1>
         <div className="p-10 bg-white rounded-xl lg:mx-40 md:mx-20 sm:mx-10 mb-8">

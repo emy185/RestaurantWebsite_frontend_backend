@@ -44,12 +44,5 @@ class Booking(models.Model):
         constraints = [
             models.CheckConstraint(check=models.Q(num_guests__gte=0), name='non_negative_num_guests'),
         ]
-    
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
-    phone = models.CharField(max_length=20, blank=True, null=True)
-
-    def __str__(self):
-        return self.user.username
 
 
